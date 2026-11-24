@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Practice · Fiziks</title>
+    <meta name="description" content="Randomized physics practice problems with hints and worked solutions." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+    <script defer src="js/core.js"></script>
+    <script defer src="js/topics/kinematics.js"></script>
+    <script defer src="js/topics/projectiles.js"></script>
+    <script defer src="js/topics/forces.js"></script>
+    <script defer src="js/topics/energy.js"></script>
+    <script defer src="js/topics/momentum.js"></script>
+    <script defer src="js/topics/circular.js"></script>
+    <script defer src="js/topics/electricity.js"></script>
+    <script defer src="js/topics/waves.js"></script>
+    <script defer src="js/topics/thermo.js"></script>
+    <script defer src="js/practice.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="index.html"><span class="logo-mark">F</span>Fiziks</a>
+        <nav class="nav">
+          <a href="index.html">Topics</a>
+          <a href="practice.html" aria-current="page">Practice</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap practice">
+      <div class="controls">
+        <label class="visually-hidden" for="topic-select">Topic</label>
+        <select id="topic-select" class="select"></select>
+        <div class="segmented" id="level-filter" role="group" aria-label="Difficulty">
+          <button type="button" data-level="all">All</button>
+          <button type="button" data-level="1">Intro</button>
+          <button type="button" data-level="2">Standard</button>
+          <button type="button" data-level="3">Challenge</button>
+        </div>
+      </div>
+
+      <div class="layout">
+        <article class="card" id="problem-card" aria-live="polite">
+          <div class="problem-meta" id="problem-meta"></div>
+          <div class="problem-text" id="problem-text"></div>
+
+          <form class="answer-row" id="answer-form" autocomplete="off">
+            <label class="visually-hidden" for="answer">Your answer</label>
+            <div class="answer-input">
+              <input id="answer" type="text" inputmode="decimal" placeholder="Your answer" />
+              <span class="unit" id="answer-unit"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" id="check-btn">Check</button>
+          </form>
+
+          <div id="feedback" hidden></div>
+
+          <div class="tools">
+            <button type="button" class="btn btn-ghost" id="hint-btn">Hint</button>
+            <button type="button" class="btn btn-ghost" id="solution-btn">Show solution</button>
+            <span class="spacer"></span>
+            <button type="button" class="btn" id="next-btn">Next problem →</button>
+          </div>
+
+          <div class="hints" id="hints" hidden>
+            <h4>Hints</h4>
+            <ol id="hint-list"></ol>
+          </div>
+          <div class="solution" id="solution" hidden>
+            <h4>Worked solution</h4>
+            <div class="solution-body" id="solution-body"></div>
+          </div>
+        </article>
+
+        <aside class="side">
+          <div class="card">
+            <h4>This session</h4>
+            <div class="stat-row"><span>Solved</span><strong id="s-solved">0</strong></div>
+            <div class="stat-row"><span>First-try correct</span><strong id="s-first">0</strong></div>
+            <div class="stat-row"><span>Current streak</span><strong id="s-streak">0</strong></div>
+            <div class="stat-row"><span>Best streak</span><strong id="s-best">0</strong></div>
+            <button type="button" class="btn" id="share-btn">Copy link to this problem</button>
+            <p class="tip">
+              Answers within 2% count as correct. Scientific notation works: <code>3.2e-5</code> or
+              <code>3.2x10^-5</code>. Press <kbd>Enter</kbd> to check, and again to move on.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">Fiziks uses \(g = 9.8\ \mathrm{m/s^2}\) unless stated.</div>
+    </footer>
+  </body>
+</html>

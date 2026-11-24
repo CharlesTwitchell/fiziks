@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fiziks: Physics Practice Problems</title>
+    <meta name="description" content="Unlimited randomized physics practice problems with hints and worked solutions." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+    <script defer src="js/core.js"></script>
+    <script defer src="js/topics/kinematics.js"></script>
+    <script defer src="js/topics/projectiles.js"></script>
+    <script defer src="js/topics/forces.js"></script>
+    <script defer src="js/topics/energy.js"></script>
+    <script defer src="js/topics/momentum.js"></script>
+    <script defer src="js/topics/circular.js"></script>
+    <script defer src="js/topics/electricity.js"></script>
+    <script defer src="js/topics/waves.js"></script>
+    <script defer src="js/topics/thermo.js"></script>
+    <script defer src="js/home.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="index.html"><span class="logo-mark">F</span>Fiziks</a>
+        <nav class="nav">
+          <a href="index.html" aria-current="page">Topics</a>
+          <a href="practice.html">Practice</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <h1>Physics practice that never runs out.</h1>
+        <p>
+          Every problem is generated with fresh numbers, so you can keep practicing the same idea until it clicks.
+          Check your answer instantly, then use hints or a full worked solution if you get stuck.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="practice.html?topic=mixed">Start mixed practice</a>
+          <a class="btn" href="#topics">Choose a topic</a>
+        </div>
+        <div class="stats">
+          <div><strong id="stat-topics">–</strong>topics</div>
+          <div><strong id="stat-types">–</strong>problem types</div>
+          <div><strong>∞</strong>variations</div>
+          <div><strong id="stat-solved">0</strong>solved on the first try</div>
+        </div>
+      </section>
+
+      <h2 class="section-title" id="topics">Topics</h2>
+      <div class="topic-grid" id="topic-grid"></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">Fiziks uses \(g = 9.8\ \mathrm{m/s^2}\) unless stated. Answers within 2% are marked correct.</div>
+    </footer>
+  </body>
+</html>
