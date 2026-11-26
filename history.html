@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Physics History · Fiziks</title>
+    <meta name="description" content="Quiz yourself on famous discoveries and the scientists behind them." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/core.js"></script>
+    <script defer src="js/history-data.js"></script>
+    <script defer src="js/history.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="index.html"><span class="logo-mark">F</span>Fiziks</a>
+        <nav class="nav">
+          <a href="index.html">Topics</a>
+          <a href="practice.html">Practice</a>
+          <a href="history.html" aria-current="page">History</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap practice">
+      <div class="history-head">
+        <h1>Physics History</h1>
+        <p>Famous discoveries and the people behind them. Rounds of 10 questions.</p>
+      </div>
+
+      <div class="chips" id="cat-chips" role="group" aria-label="Era"></div>
+
+      <div class="layout">
+        <section>
+          <article class="card" id="quiz-card" aria-live="polite">
+            <div class="quiz-progress">
+              <span id="q-count"></span>
+              <span id="q-score"></span>
+            </div>
+            <div class="bar quiz-bar"><span id="q-bar" style="width: 0%"></span></div>
+            <div class="problem-meta" id="q-meta"></div>
+            <p class="problem-text" id="q-text"></p>
+            <div class="options" id="q-options"></div>
+            <div class="explain" id="q-explain" hidden></div>
+            <div class="tools" id="q-tools" hidden>
+              <span class="spacer"></span>
+              <button type="button" class="btn btn-primary" id="q-next">Next question →</button>
+            </div>
+          </article>
+
+          <article class="card" id="results" hidden>
+            <div class="result-score" id="r-score"></div>
+            <p class="result-msg" id="r-msg"></p>
+            <div class="hero-actions">
+              <button type="button" class="btn btn-primary" id="r-again">Play another round</button>
+            </div>
+            <div class="missed" id="r-missed"></div>
+          </article>
+        </section>
+
+        <aside class="side">
+          <div class="card">
+            <h4>Best scores</h4>
+            <div id="best-list"></div>
+            <p class="tip">Press <kbd>1</kbd>–<kbd>4</kbd> to answer and <kbd>Enter</kbd> for the next question. Questions you haven't seen yet come up first.</p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">Fiziks · Physics history quiz</div>
+    </footer>
+  </body>
+</html>

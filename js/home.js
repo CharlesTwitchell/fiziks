@@ -29,6 +29,34 @@ document.addEventListener("DOMContentLoaded", function () {
     grid.appendChild(a);
   });
 
+  // Physics history quiz cards
+  const H = F.history;
+  const hgrid = document.getElementById("history-grid");
+  if (H && hgrid) {
+    let best = {};
+    try {
+      best = (JSON.parse(localStorage.getItem("fiziks.history.v1")) || {}).best || {};
+    } catch (e) {
+      /* ignore */
+    }
+    H.categories.forEach((c) => {
+      const n = H.questions.filter((q) => q.c === c.id).length;
+      const b = best[c.id];
+      const a = document.createElement("a");
+      a.className = "topic-card";
+      a.href = `history.html?cat=${c.id}`;
+      a.innerHTML = `
+        <span class="tag"></span>
+        <h3></h3>
+        <p></p>
+        <div class="topic-meta"><span>${n} questions</span><span>${b == null ? "Not played" : "Best " + Math.round(b * 100) + "%"}</span></div>`;
+      a.querySelector(".tag").textContent = c.era;
+      a.querySelector("h3").textContent = c.name;
+      a.querySelector("p").textContent = c.blurb;
+      hgrid.appendChild(a);
+    });
+  }
+
   document.getElementById("stat-topics").textContent = F.topics.length;
   document.getElementById("stat-types").textContent = F.totalTemplates();
   document.getElementById("stat-solved").textContent = solved;

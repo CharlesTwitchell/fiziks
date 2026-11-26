@@ -23,6 +23,7 @@
     <script defer src="js/topics/electricity.js"></script>
     <script defer src="js/topics/waves.js"></script>
     <script defer src="js/topics/thermo.js"></script>
+    <script defer src="js/history-data.js"></script>
     <script defer src="js/home.js"></script>
   </head>
   <body>
@@ -32,6 +33,7 @@
         <nav class="nav">
           <a href="index.html" aria-current="page">Topics</a>
           <a href="practice.html">Practice</a>
+          <a href="history.html">History</a>
         </nav>
       </div>
     </header>
@@ -46,6 +48,7 @@
         <div class="hero-actions">
           <a class="btn btn-primary" href="practice.html?topic=mixed">Start mixed practice</a>
           <a class="btn" href="#topics">Choose a topic</a>
+          <a class="btn" href="history.html">Physics history quiz</a>
         </div>
         <div class="stats">
           <div><strong id="stat-topics">–</strong>topics</div>
@@ -57,6 +60,10 @@
 
       <h2 class="section-title" id="topics">Topics</h2>
       <div class="topic-grid" id="topic-grid"></div>
+
+      <h2 class="section-title" id="history">Physics History</h2>
+      <p class="section-lead">Quiz yourself on famous discoveries and the scientists behind them, from Archimedes to the Higgs boson.</p>
+      <div class="topic-grid" id="history-grid"></div>
     </main>
 
     <footer class="site-footer">

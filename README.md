@@ -15,6 +15,8 @@ It is a static site with no build step. Open `index.html` in a browser, or host 
 - **Smart feedback**: flags sign errors, powers-of-ten (unit conversion) mistakes and factor-of-2 slips.
 - **Shareable problems**: each problem's URL includes a seed, so a link reproduces the exact same numbers.
 - **Progress tracking**: first-try accuracy per topic is saved in the browser (localStorage).
+- **Physics history quiz**: 90 multiple-choice questions on famous discoveries and scientists, in 6 eras,
+  played in 10-question rounds with explanations, a review of missed questions, and best scores.
 - Math rendered with [KaTeX](https://katex.org). Works on phones, and supports light and dark mode.
 
 ## Structure
@@ -22,10 +24,13 @@ It is a static site with no build step. Open `index.html` in a browser, or host 
 ```
 index.html              Topic overview
 practice.html           Practice page (?topic=<id>|mixed&level=1|2|3&seed=<n>)
+history.html            Physics history quiz (?cat=<category id>)
 css/style.css           All styles
 js/core.js              RNG, number formatting, answer parsing, storage, topic registry
 js/home.js              Renders the topic grid
 js/practice.js          Practice page logic
+js/history-data.js      History quiz categories and questions
+js/history.js           History quiz logic
 js/topics/*.js          One file per topic, each a list of problem templates
 assets/favicon.svg
 ```
@@ -60,6 +65,17 @@ Open the topic file in `js/topics/` and add an entry to its `problems` array:
 
 To add a whole new topic, create `js/topics/<name>.js` using `FIZIKS.addTopic({...})` and add a `<script>` tag for it
 to both `index.html` and `practice.html`.
+
+## Adding a history question
+
+Append to `H.questions` in `js/history-data.js`:
+
+```js
+{ c: "quantum", q: "Who discovered the neutron in 1932?", a: "James Chadwick",
+  w: ["Ernest Rutherford", "Enrico Fermi", "Irène Joliot-Curie"], ex: "Short explanation shown after answering." },
+```
+
+`c` must be one of the category ids in `H.categories`, and `w` needs exactly three wrong answers.
 
 ## Deploying to GitHub Pages
 
